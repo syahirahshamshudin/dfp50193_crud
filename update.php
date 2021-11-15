@@ -91,12 +91,12 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     mysqli_close($conn);
 } else {
     // check if url contain id, if not redirect to index page
-    if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
+    if (isset($_GET["idStudent"]) && !empty(trim($_GET["idStudent"]))) {
         // get id from url
-        $id = trim($_GET["id"]);
+        $id = trim($_GET["idStudent"]);
 
         // retrieve record associated with id
-        $sql = "SELECT * FROM students WHERE id = '$id'";
+        $sql = "SELECT * FROM students WHERE idStudent = '$id'";
         $result = mysqli_query($conn, $sql);
         $record = mysqli_num_rows($result);
 
